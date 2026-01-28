@@ -22,3 +22,18 @@ let undefinedStuff
 console.log(typeof undefinedStuff);
 
 console.log(typeof FALSE);
+
+//Ejemplos aca bien aftercatabath hechos por mi
+
+let UmamusumeLoMejorDeLaHistoria = true;
+console.log(typeof UmamusumeLoMejorDeLaHistoria);
+console.log("Es umamusume lo mejor que hay en la historia? ");
+console.log(UmamusumeLoMejorDeLaHistoria);
+
+let añoActual = 2026;
+console.log(typeof añoActual);
+
+let randomUndefinedStuff;
+console.log(typeof randomUndefinedStuff);
+console.log("Tendre trabajo este 2026?");
+console.log(randomUndefinedStuff);
