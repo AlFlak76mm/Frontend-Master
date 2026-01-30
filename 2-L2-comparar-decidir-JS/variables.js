@@ -44,3 +44,24 @@ console.log(12 == '12');
 
 //comparacion estricta
 console.log(23 === "23");
+
+let valor1 = 20;
+let valor2 = 30;
+
+
+//mas comparaciones
+console.log(valor1 > valor2);
+console.log(valor1 >= valor2);
+
+console.log(valor1 < valor2);
+console.log(valor1 <= valor2);
+
+console.log(valor1 != valor2);
+console.log(valor1 !== '20');
+
+console.log(10 != 10)
+
+
+//modulo jjk
+let modulo = num1 % num2;
+console.log("Modulo de 3 % 5: " + modulo);
