@@ -34,7 +34,7 @@ No se muetran en el resultado final
 let perros = prompt("Cuantos perros tienes?");
 let gatos = prompt("Cuantos gatos tienes?");
 
-perros = parseInt(perros); //conversion de string a int
+perros = parseInt(perros); //conversion de string a int | numero entero
 gatos = parseInt(gatos);
 
 alert("tienes un total de " + (perros+gatos) + " mascotas");
