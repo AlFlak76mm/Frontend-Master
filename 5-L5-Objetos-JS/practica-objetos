@@ -1,0 +1,21 @@
+
+const libro = {
+    titulo: "",
+    autor: "",
+    año: 0,
+    estado: "",
+    capitulos: []
+}
+
+libro.titulo = prompt("Ingresa el titulo del librio");
+libro.autor = prompt("Ingresa el autor");
+libro.año = prompt("Ingresa el año");
+libro.estado = prompt("Ingresa el estado disponible/prestado");
+
+
+let estado = "continuar";
+while(estado !== "salir"){
+
+}
+
+console.log(libro.año);
