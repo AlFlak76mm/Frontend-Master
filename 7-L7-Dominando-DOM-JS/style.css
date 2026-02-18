@@ -1,0 +1,14 @@
+
+#seccion-pendientes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.list{
+    margin: 20px;
+}
+
+#practica-alternativa{
+    display: flex;
+    flex-direction: column;
+}

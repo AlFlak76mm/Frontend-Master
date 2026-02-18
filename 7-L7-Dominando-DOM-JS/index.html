@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIsta de Super</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -12,12 +13,59 @@
 
     <div>
         <input type="text" id="itemInput" placeholder="Escribe un producto">
-        <button id="additemButton">Agregar producto</button>
+        <button id="addItemButton">Agregar producto</button>
     </div>
 
     <main>
         <ul id="itemList"></ul>
     </main>
+
+    <hr>
+
+    <h1>Lista de pendientes</h1>
+    <section id="seccion-pendientes">
+    <div class="list">
+        <h2>Pendientes Urgentes</h2>
+        <input type="text" id="inputUrgente" placeholder="Escribe el pendiente">
+        <button id="addUrgente">Añadir</button>
+        <div>
+            <ul id="listaUrgente"></ul>
+        </div>
+    </div>
+
+    <div class="list">
+        <h2>Pendientes de la Semana</h2>
+        <input type="text" id="inputSemana" placeholder="Escribe el pendiente">
+        <button id="addSemana">Añadir</button>
+        <div>
+            <ul id="listaSemana"></ul>
+        </div>
+    </div>
+
+    <div class="list">
+        <h2>Pendientes del Mes</h2>
+        <input type="text" id="inputMes" placeholder="Escribe el pendiente">
+        <button id="addMes">Añadir</button>
+        <div>
+            <ul id="listaMes"></ul>
+        </div>
+    </div>
+
+    <div class="list">
+        <h2>Proyeccion de pendientes futuros</h2>
+        <input type="text" id="inputfuturo" placeholder="Escribe el pendiente">
+        <button id="addFuturo">Añadir</button>
+    </div>
+
+    </section>
+
+    <hr>
+
+    <section id="practica-alternativa">
+        <h1></h1>
+        <div>
+        </div>
+    </section>
 
     <script src="main.js"></script>
 </body>
