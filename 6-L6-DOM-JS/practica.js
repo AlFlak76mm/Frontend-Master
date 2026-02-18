@@ -7,9 +7,10 @@ const areaComentarios = document.getElementById("caja-comentarios");
 
 let nuevoComentario = document.createElement("p");
 
-nuevoComentario.textContent = comentario;
+nuevoComentario.textContent = comentario.textContent;
 
 
 btnComentario.addEventListener("click" , ()=>{
     document.body.appendChild(nuevoComentario);
+/*     document.body.areaComentarios.appendChild(nuevoComentario); */
 })
