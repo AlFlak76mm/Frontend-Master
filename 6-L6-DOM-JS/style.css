@@ -18,8 +18,6 @@
 
 .practica{
     display: flex;
-    width: 90%;
-    height: 400px;
 /*     background-color: aquamarine; */
     justify-content: center;
     flex-direction: column;
