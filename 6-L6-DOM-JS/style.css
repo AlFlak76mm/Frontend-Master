@@ -24,13 +24,25 @@
     align-items: center;
 }
 
-.textBox{
-    width: 70%;
-    height: 100px;
-/*     background-color: blue; */
+textarea{
+    width: 95%;
+    height: 50px;
+    margin-bottom: 25px;
 }
 
-#btnComentar{
-    margin-top: 50px;
-    width: 100px;
+.comentario{
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.fecha{
+    font-size: 10px;
+    color: cadetblue;
+}
+
+.eliminar{
+    margin-top: 10px;
+    background-color: red;
+    color: azure;
 }
