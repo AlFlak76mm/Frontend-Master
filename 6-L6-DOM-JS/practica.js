@@ -3,8 +3,8 @@ let practica = document.getElementById("practica");
 let comentario = document.getElementById("comentario");
 let areaComentarios = document.getElementById("areaComentarios");
 
-form.addEventListener("submit", (e) => {
-    e.prevenDefault(); //Evita que la pagina se refresque
+practica.addEventListener("submit", (e) => {
+    e.preventDefault(); //Evita que la pagina se refresque
 
     const texto = comentario.value; //Variable con el valor de comentario; textarea
 
