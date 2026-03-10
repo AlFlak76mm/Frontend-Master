@@ -32,10 +32,14 @@ export const calcularCosto = ({
     noches = 0,
     personas = 1
 }) => {
-    const baseDestino = COSTO_DESTINO(destino) ?? 0;
-    const extraTransporte = COSTO_TRANSPORTE(transporte) ?? 0;
-    const costoNoche = COSTO_ALOJAMIENTO_POR_NOCHE(alojamiento) ?? 0;
+    const baseDestino = COSTO_DESTINO[destino] ?? 0;
+
+    const extraTransporte = COSTO_TRANSPORTE[transporte] ?? 0;
+
+    const costoNoche = COSTO_ALOJAMIENTO_POR_NOCHE[alojamiento] ?? 0;
+
     let subtotal = (baseDestino + extraTransporte) * personas;
+
     //Sumamos el coste del alojamiento
     //noches * precio por noche
     subtotal += noches * costoNoche;

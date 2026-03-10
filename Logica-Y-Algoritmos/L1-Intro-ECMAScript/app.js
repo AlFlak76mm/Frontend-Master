@@ -1,4 +1,4 @@
-import { registrarDestino, mostrarItinerario } from "./viajes";
+import { registrarDestino, mostrarItinerario } from "./viajes.js";
 
 const iniciarApp = () => {
     registrarDestino("Londres", "2026-05-03", "Avion",{

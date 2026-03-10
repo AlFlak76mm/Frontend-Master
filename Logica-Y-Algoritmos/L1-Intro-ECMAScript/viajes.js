@@ -1,5 +1,5 @@
 //importar funcion que calcula costos
-import { calcularCosto } from "./costos";
+import { calcularCosto } from "./costos.js";
 
 
 //Se utiliza const porque no vamos a cambiar el arreglo, solo agregar elementos
@@ -33,7 +33,7 @@ export const registrarDestino = (
         })
     };
 
-    destino.push(nuevoViaje);
+    destinos.push(nuevoViaje);
 
     return nuevoViaje;
 
@@ -44,11 +44,14 @@ export const obtenerItinerario = () => {
 }
 
 export const mostrarItinerario = () => {
-    if(destinos.length = 0){
+
+    if(destinos.length === 0){
         console.log("no tiene viajes registrados");
         return;
     };
+
     destinos.forEach((viaje, idx) => {
+
         console.log(`${idx+1}`);
 
         console.log(`Destino: ${viaje.destino}`);
@@ -58,6 +61,7 @@ export const mostrarItinerario = () => {
         console.log(`Personas: ${viaje.personas}`);
 
         console.log(`Costo total aproximado: ${viaje.costo}`);
+
         console.log('-------------------------------');
     })
 }
