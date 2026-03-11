@@ -55,7 +55,7 @@ const usuarios = [
     {id: 4, nombre: 'Ana4'},
 ]
 
-//El metodo find() sirbe para encontrar el primer elemento que cumpla con una condicion
+//El metodo find() sirve para encontrar el primer elemento que cumpla con una condicion
 //Usarlo cuando se necesite una sola cosa
 const encontrado = usuarios.find((u) => u.id === 2);
 console.log(encontrado);
