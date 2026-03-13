@@ -16,9 +16,10 @@ const mostrarLista = () =>{
         console.log("No hay elementos en la lista");
         return;
     };
-    listaDeCompras.forEach((producto) => {
-        console.log(producto);
+    listaDeCompras.forEach((producto, index) => {
+        console.log(index+1, " = ", producto);
     });
+    console.log("------------------");
 }
 mostrarLista();
 
@@ -27,12 +28,8 @@ mostrarLista();
 //???
 
 const eliminarProducto = (listaDeCompras, product) =>{
-    return listaDeCompras.filter(product => product !== product);
+    return listaDeCompras.filter(n => n !== product);
 }
-eliminarProducto(listaDeCompras, "Arroz");
 
-
-let eliminar = listaDeCompras.filter(n => n !== "Arroz");
-
-
-console.log(eliminar);
+listaDeCompras = eliminarProducto(listaDeCompras, "Arroz");
+mostrarLista();
