@@ -8,7 +8,12 @@ function encontrarPareja(arr) {
 
     while (siguiente < arr.length) {
 
-
+            if(arr[inicio].charAt(0) !== arr[siguiente].charAt(0)){
+            inicio++;
+            siguiente++;
+            } else{
+                return arr.slice(inicio, siguiente+1);
+            }
     }
     return null;
 }
