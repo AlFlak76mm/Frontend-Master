@@ -1,12 +1,13 @@
 
-function palabraMasLarga(texto){
+// Solucion simple - Es cuestionable si se esta usando el algoritmo Sliding Window, pero cumple con los requisitos de la practica.
 
+function palabraMasLarga(texto){
+    
     const palabras = texto.split(" ");
 
     let masLarga = '';
 
     let pActual = 0;
-
 
     for(let i=0; i<palabras.length; i++){
 
@@ -17,12 +18,8 @@ function palabraMasLarga(texto){
         }
 
     }
-
     return masLarga;
-
 }
 
-
 const texto = "JavaScript es un lenguaje de programación increíble para aprender.";
-
 console.log(palabraMasLarga(texto));
