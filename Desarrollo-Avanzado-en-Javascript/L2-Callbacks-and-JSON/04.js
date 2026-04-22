@@ -1,4 +1,4 @@
 
-const fs = requiere ("fs");
+const fs = require ("fs");
 
-const path = requiere ("path");
+const path = require ("path");
