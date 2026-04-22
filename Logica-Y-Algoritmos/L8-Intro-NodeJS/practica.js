@@ -1,4 +1,4 @@
-const fs = require ("fs");
+const fs = require ('fs');
 
 // Ruta del archivo de notas
 const filePath = './notas.json';
@@ -8,10 +8,11 @@ const filePath = './notas.json';
  * @param {string} titulo - El título de la nota.
  * @param {string} contenido - El contenido de la nota.
  */
+
+
 function agregarNota(titulo, contenido) {
   let notas = [];
 
-  //
   if (fs.existsSync(filePath)) {
     // PISTA: Aquí debes leer las notas existentes antes de agregar la nueva.
     fs.readFileSync(filePath, 'utf-8', (err, data)=>{
@@ -19,25 +20,34 @@ function agregarNota(titulo, contenido) {
             console.log('Error al leer archivo', err);
             return;
         }
-    });
     // COMPLETAR: Usa fs.readFileSync para leer el archivo.
     console.log('Contenido del archivo: ', data);
+    });
   }
-  //
+
 
   const nuevaNota = { titulo, contenido };
   notas.push(nuevaNota);
 
+
   // PISTA: Ahora debes sobrescribir el archivo con las notas actualizadas.
-  fs.writeFileSync(filePath, notas, (err)=>{
+  fs.writeFileSync(filePath, JSON.stringify(notas, null, 2), (err)=>{
     if(err){
         console.log('Error al agregar nota', err);
         return;
     }
+    console.log('Nota agregada con éxito.');
   });
+
+
   // COMPLETAR: Usa fs.writeFileSync para guardar las notas.
-  console.log('Nota agregada con éxito.');
+  
 }
+
+
+
+
+
 
 /**
  * Lista todas las notas guardadas.
@@ -80,23 +90,23 @@ function eliminarNota(titulo) {
 
 // Ejecución de ejemplo
 agregarNota('Compras', 'Comprar leche y pan.');
-listarNotas();
-eliminarNota('Compras');
+//listarNotas();   //<------------
+//eliminarNota('Compras');   //<-------------
 
 // ### Pistas para Resolver el Proyecto ###
 // Formato del archivo `notas.json`:
-[
+/* [
   { "titulo": "Compras", "contenido": "Comprar leche y pan." },
   { "titulo": "Trabajo", "contenido": "Terminar reporte semanal." }
-]
+] */
 
 // #### Operaciones clave: ###
 // 1. Para leer las notas existentes:
-const data = fs.readFileSync(filePath, 'utf8');
-const notas = JSON.parse(data);
+//const data = fs.readFileSync(filePath, 'utf8');
+//const notas = JSON.parse(data);
 
 // 2. Para guardar las notas actualizadas:
-fs.writeFileSync(filePath, JSON.stringify(notas, null, 2));
+//fs.writeFileSync(filePath, JSON.stringify(notas, null, 2));
 
 // 3. Filtrar notas para eliminar:
-const notasRestantes = notas.filter((nota) => nota.titulo !== titulo);
+//const notasRestantes = notas.filter((nota) => nota.titulo !== titulo);
