@@ -1,7 +1,7 @@
 const fs = require ('fs');
 
 // Ruta del archivo de notas
-const filePath = './notas.json';
+const filePath = "./Logica-Y-Algoritmos/L8-Intro-NodeJS/notas.json";
 
 /**
  * Agrega una nueva nota al archivo.
@@ -21,8 +21,8 @@ function agregarNota(titulo, contenido) {
             return;
         }
     // COMPLETAR: Usa fs.readFileSync para leer el archivo.
-    console.log('Contenido del archivo: ', data);
     });
+    
   }
 
 
@@ -36,9 +36,12 @@ function agregarNota(titulo, contenido) {
         console.log('Error al agregar nota', err);
         return;
     }
-    console.log('Nota agregada con éxito.');
-  });
 
+  console.log('Nota agregada con éxito.');
+  console.log("-------------------");
+    
+  });
+  
 
   // COMPLETAR: Usa fs.writeFileSync para guardar las notas.
   
@@ -55,14 +58,16 @@ function agregarNota(titulo, contenido) {
 function listarNotas() {
   if (fs.existsSync(filePath)) {
     // PISTA: Debes leer y parsear el contenido del archivo.
-        fs.readFileSync(filePath, 'utf-8', (err, data)=>{
-        if(err){
-            console.log('Error al leer archivo', err);
-            return;
-        }
-    });
+
+    const data = fs.readFileSync(filePath, 'utf8');
+    const notas = JSON.parse(data);
+
     // COMPLETAR: Usa fs.readFileSync para leer y JSON.parse para convertir el contenido.
-    console.log(JSON.parse(filePath));
+    console.log("Lista de Notas:");
+    notas.forEach((nota, index) => {
+      console.log(`${index + 1}. ${nota.titulo}: ${nota.contenido}`);
+    });
+    console.log("-------------------");
   } else {
     console.log('No hay notas guardadas.');
   }
@@ -76,13 +81,20 @@ function eliminarNota(titulo) {
   if (fs.existsSync(filePath)) {
     // PISTA: Primero lee todas las notas.
     // COMPLETAR: Usa fs.readFileSync para leer el archivo.
+    const data = fs.readFileSync(filePath, 'utf8');
+    const notas = JSON.parse(data);
 
     // PISTA: Filtra las notas y elimina la que coincida con el título.
     // COMPLETAR: Usa Array.filter para obtener las notas restantes.
+    const notasRestantes = notas.filter((nota) => nota.titulo !== titulo);
 
     // PISTA: Sobrescribe el archivo con las notas actualizadas.
     // COMPLETAR: Usa fs.writeFileSync.
+
+    fs.writeFileSync(filePath, JSON.stringify(notasRestantes, null, 2));
+
     console.log(`Nota con título "${titulo}" eliminada.`);
+    console.log("-------------------");
   } else {
     console.log('No hay notas para eliminar.');
   }
@@ -90,8 +102,10 @@ function eliminarNota(titulo) {
 
 // Ejecución de ejemplo
 agregarNota('Compras', 'Comprar leche y pan.');
-//listarNotas();   //<------------
-//eliminarNota('Compras');   //<-------------
+listarNotas();   
+eliminarNota('Compras');  
+agregarNota('Los Therian', 'Los Therian los therian los therian');
+listarNotas(); 
 
 // ### Pistas para Resolver el Proyecto ###
 // Formato del archivo `notas.json`:
