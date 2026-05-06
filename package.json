@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/AlFlak76mm/Frontend-Master#readme",
   "dependencies": {
-    "axios": "^1.15.2"
+    "axios": "^1.15.2",
+    "express": "^5.2.1"
   }
 }
